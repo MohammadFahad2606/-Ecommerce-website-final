@@ -8,6 +8,33 @@ const products = [
       price: '$35',
       color: 'Black',
     },
+    {
+      id: 2,
+      name: 'Basic Tee',
+      href: '#',
+      imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-01-related-product-01.jpg',
+      imageAlt: "Front of men's Basic Tee in black.",
+      price: '$35',
+      color: 'Black',
+    },
+    {
+      id: 3,
+      name: 'Basic Tee',
+      href: '#',
+      imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-01-related-product-01.jpg',
+      imageAlt: "Front of men's Basic Tee in black.",
+      price: '$35',
+      color: 'Black',
+    },
+    {
+      id: 4,
+      name: 'Basic Tee',
+      href: '#',
+      imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-01-related-product-01.jpg',
+      imageAlt: "Front of men's Basic Tee in black.",
+      price: '$35',
+      color: 'Black',
+    },
     // More products...
   ]
   
@@ -15,7 +42,7 @@ const products = [
     return (
       <div className="bg-white">
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-gray-900">Customers also purchased</h2>
+          <h2 className=" heading text-2xl font-bold tracking-tight text-black text-center">New Arrivals</h2>
   
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             {products.map((product) => (
@@ -41,6 +68,9 @@ const products = [
             ))}
           </div>
         </div>
+          <div className="flex w-full items-center justify-center">
+          <button className=" bg-white text-black rounded-full p-4 px-8  border border-black">View All</button>
+          </div>
       </div>
     )
   }

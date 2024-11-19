@@ -146,8 +146,9 @@ const navigation = {
     },
   ],
   pages: [
-    { name: "Company", href: "#" },
-    { name: "Stores", href: "#" },
+    { name: "On Sale", href: "/on-sale" },
+    { name: "New Arrivals", href: "/new-arrivals" },
+    { name: "Brands", href: "/brands" },
   ],
 };
 
@@ -298,7 +299,7 @@ export const Header = () => {
               <div className="ml-4 flex lg:ml-0">
               <Link to="/" href="/">
                   <span className="sr-only bg-slate-600">SHOP.CO</span>
-                  <img className="w-32" src="./assets/imges/Logo.svg" alt="logo"  />
+                  <h1 className="header-logo">SHOP.CO</h1>
                 </Link>
               </div>
 

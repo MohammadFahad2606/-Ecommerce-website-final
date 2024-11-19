@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@font-face {
+    font-family: Fontspring;
+    src: url(./assets/font/Fontspring-regular.otf);
+  }
+@font-face {
+    font-family: FontspringBold;
+    src: url(./assets/font/Fontspring-bold.otf);
+    font-weight: bold;
+  }
+@font-face {
+    font-family: FontspringExtraBold;
+    src: url(./assets/font/Fontspring-extrabold.otf);
+    font-weight: bolder;
+  }
+
+
+  body{
+    font-family: "Roboto", sans-serif;
+  }
+  .header-logo{
+    font-family:FontspringExtraBold ;
+    font-size: larger;
+  }
+  .footer-logo{
+    font-family:FontspringExtraBold ;
+  }
+  .heading{
+    font-family:FontspringExtraBold ;
+    font-size: xx-large;
+  }
