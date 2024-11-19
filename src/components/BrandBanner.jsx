@@ -24,7 +24,7 @@ const BrandBanner = () => {
   return (
     <div className='flex flex-wrap justify-around p-5 gap-4  bg-black'>
     {
-        brandData.map((item,index)=>(<img  key={index} src={item.src} alt={item.name}  />)
+        brandData.map((item,index)=>(<img key={index} className= "w-20 lg:w-28" src={item.src} alt={item.name}  />)
         )
     }
     </div>

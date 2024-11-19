@@ -1,3 +1,8 @@
+import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { ProductTypes } from "../Redux/Action/ActionTypes"
+import axios from "axios"
+
 const products = [
     {
       id: 1,
@@ -39,6 +44,25 @@ const products = [
   ]
   
   export default function Product() {
+    const dispatch = useDispatch()
+
+    const data = useSelector((state)=>state)
+    console.log(data)
+
+const getData= async ()=>{
+  try{
+const data = await axios.get("https://fakestoreapi.com/products")
+console.log() 
+dispatch({type:  ProductTypes.allProduct, payload: data?.data})
+  }catch(er){
+    console.log(er)
+
+  }
+}
+    useEffect(()=>{
+      getData()
+
+    },[])
     return (
       <div className="bg-white">
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">

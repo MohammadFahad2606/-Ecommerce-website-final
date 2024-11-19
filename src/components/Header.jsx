@@ -20,6 +20,7 @@ import {
   ShoppingBagIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import ShoppingCarts from "./ShoppingCarts";
 
 const navigation = {
   categories: [
@@ -154,12 +155,14 @@ const navigation = {
 
 export const Header = () => {
   const [showInput, setShowInput] = useState(false);
+  const [cartopen, setcartOpen] = useState(false)
   const handleToggleInput = () => {
     setShowInput(!showInput);
   };
   const [open, setOpen] = useState(false);
   return (
     <div className="bg-white">
+      <ShoppingCarts cartopen={cartopen}setcartOpen={setcartOpen} />
       {/* Mobile menu */}
       <Dialog open={open} onClose={setOpen} className="relative z-40 lg:hidden">
         <DialogBackdrop
@@ -191,7 +194,7 @@ export const Header = () => {
                   {navigation.categories.map((category) => (
                     <Tab
                       key={category.name}
-                      className="flex-1 whitespace-nowrap border-b-2 border-transparent px-1 py-4 text-base font-medium text-gray-900 data-[selected]:border-indigo-600 data-[selected]:text-indigo-600"
+                      className="flex-1 whitespace-nowrap border-b-2 border-transparent px-1 py-4 text-base font-medium text-gray-900 data-[selected]:border-black data-[selected]:text-black"
                     >
                       {category.name}
                     </Tab>
@@ -309,7 +312,7 @@ export const Header = () => {
                   {navigation.categories.map((category) => (
                     <Popover key={category.name} className="flex">
                       <div className="relative flex">
-                        <PopoverButton className="relative z-10 -mb-px flex items-center border-b-2 border-transparent pt-px text-sm font-medium text-gray-700 transition-colors duration-200 ease-out hover:text-gray-800 data-[open]:border-indigo-600 data-[open]:text-indigo-600">
+                        <PopoverButton className="relative z-10 -mb-px flex items-center border-b-2 border-transparent pt-px text-sm font-medium text-gray-700 transition-colors duration-200 ease-out hover:text-gray-800 data-[open]:border-b-black data-[open]:text-black">
                           {category.name}
                         </PopoverButton>
                       </div>
@@ -448,7 +451,7 @@ export const Header = () => {
             className="p-2 rounded-full hover:bg-gray-100 focus:outline-none"
           >
             <MagnifyingGlassIcon
-              className="h-6 w-6 text-gray-500"
+              className="h-6 w-6 text-black"
               aria-hidden="true"
             />
           </button>
@@ -458,7 +461,7 @@ export const Header = () => {
 
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6">
-                <ShoppingBagIcon
+                <ShoppingBagIcon onClick={()=>setcartOpen(true)}
                       aria-hidden="true"
                       className="size-6 shrink-0"
                     />
