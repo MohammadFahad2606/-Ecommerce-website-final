@@ -155,14 +155,14 @@ const navigation = {
 
 export const Header = () => {
   const [showInput, setShowInput] = useState(false);
-  const [cartopen, setcartOpen] = useState(false)
+  const [cartopen, setcartOpen] = useState(false);
   const handleToggleInput = () => {
     setShowInput(!showInput);
   };
   const [open, setOpen] = useState(false);
   return (
     <div className="bg-white">
-      <ShoppingCarts cartopen={cartopen}setcartOpen={setcartOpen} />
+      <ShoppingCarts cartopen={cartopen} setcartOpen={setcartOpen} />
       {/* Mobile menu */}
       <Dialog open={open} onClose={setOpen} className="relative z-40 lg:hidden">
         <DialogBackdrop
@@ -274,9 +274,6 @@ export const Header = () => {
                 </div>
               ))}
             </div>
-
-
-         
           </DialogPanel>
         </div>
       </Dialog>
@@ -300,7 +297,7 @@ export const Header = () => {
 
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
-              <Link to="/" href="/">
+                <Link to="/" href="/">
                   <span className="sr-only bg-slate-600">SHOP.CO</span>
                   <h1 className="header-logo">SHOP.CO</h1>
                 </Link>
@@ -421,50 +418,50 @@ export const Header = () => {
                   </a>
                 </div> */}
 
-               
                 {/* Search */}
                 <div className="flex items-center">
-      {/* Desktop View */}
-      <div className="hidden lg:flex items-center space-x-2 lg:ml-6 w-96">
-        <input
-          type="text"
-          placeholder="Search"
-          className="w-full max-w-xs rounded-full bg-gray-200 px-4 py-2 focus:ring-2 focus:ring-black focus:outline-none"
-        />
-        <MagnifyingGlassIcon
-          className="h-6 w-6"
-          aria-hidden="true"
-        />
-      </div>
+                  {/* Desktop View */}
+                  <div className="hidden lg:flex items-center space-x-2 lg:ml-6 w-96">
+                    <input
+                      type="text"
+                      placeholder="Search"
+                      className="w-full max-w-xs rounded-full bg-gray-200 px-4 py-2 focus:ring-2 focus:ring-black focus:outline-none"
+                    />
+                    <MagnifyingGlassIcon
+                      className="h-6 w-6"
+                      aria-hidden="true"
+                    />
+                  </div>
 
-      {/* Mobile View */}
-      <div className="flex lg:hidden items-center">
-        {showInput ? (
-          <input
-            type="text"
-            placeholder="Search"
-            className="  w-full max-w-xs rounded-full   bg-gray-200 px-4 py-2 focus:ring-2 focus:ring-black focus:outline-none"
-          />
-        ) : (
-          <button
-            onClick={handleToggleInput}
-            className="p-2 rounded-full hover:bg-gray-100 focus:outline-none"
-          >
-            <MagnifyingGlassIcon
-              className="h-6 w-6 text-black"
-              aria-hidden="true"
-            />
-          </button>
-        )}
-      </div>
-    </div>
+                  {/* Mobile View */}
+                  <div className="flex lg:hidden items-center">
+                    {showInput ? (
+                      <input
+                        type="text"
+                        placeholder="Search"
+                        className="  w-full max-w-xs rounded-full   bg-gray-200 px-4 py-2 focus:ring-2 focus:ring-black focus:outline-none"
+                      />
+                    ) : (
+                      <button
+                        onClick={handleToggleInput}
+                        className="p-2 rounded-full hover:bg-gray-100 focus:outline-none"
+                      >
+                        <MagnifyingGlassIcon
+                          className="h-6 w-6 text-black"
+                          aria-hidden="true"
+                        />
+                      </button>
+                    )}
+                  </div>
+                </div>
 
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6">
-                <ShoppingBagIcon onClick={()=>setcartOpen(true)}
-                      aria-hidden="true"
-                      className="size-6 shrink-0"
-                    />
+                  <ShoppingBagIcon
+                    onClick={() => setcartOpen(true)}
+                    aria-hidden="true"
+                    className="size-6 shrink-0"
+                  />
                 </div>
               </div>
             </div>
