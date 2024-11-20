@@ -309,7 +309,7 @@ export const Header = () => {
                   {navigation.categories.map((category) => (
                     <Popover key={category.name} className="flex">
                       <div className="relative flex">
-                        <PopoverButton className="relative z-10 -mb-px flex items-center border-b-2 border-transparent pt-px text-sm font-medium text-gray-700 transition-colors duration-200 ease-out hover:text-gray-800 data-[open]:border-b-black data-[open]:text-black">
+                        <PopoverButton className="relative z-10 -mb-px flex items-center border-b-2 border-transparent pt-px text-sm font-bold text-black  transition-colors duration-200 ease-out hover:text-gray-800 data-[open]:border-b-black data-[open]:text-black">
                           {category.name}
                         </PopoverButton>
                       </div>
@@ -359,7 +359,7 @@ export const Header = () => {
                                   <div key={section.name}>
                                     <p
                                       id={`${section.name}-heading`}
-                                      className="font-medium text-gray-900"
+                                      className="font-medium text-gray-900 "
                                     >
                                       {section.name}
                                     </p>
@@ -393,7 +393,7 @@ export const Header = () => {
                     <a
                       key={page.name}
                       href={page.href}
-                      className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+                      className="flex items-center text-sm font-bold text-black hover:text-gray-800"
                     >
                       {page.name}
                     </a>
@@ -405,14 +405,14 @@ export const Header = () => {
                 {/* <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                   <a
                     href="#"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
+                    className="text-sm font-medium text-black hover:text-gray-800"
                   >
                     Sign in
                   </a>
                   <span aria-hidden="true" className="h-6 w-px bg-gray-200" />
                   <a
                     href="#"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
+                    className="text-sm font-medium text-black hover:text-gray-800"
                   >
                     Create account
                   </a>

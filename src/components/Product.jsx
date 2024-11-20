@@ -1,13 +1,13 @@
 import { useEffect } from "react";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { ProductTypes } from "../Redux/Action/ActionTypes";
 import axios from "axios";
-import NewAriv from "./Common/NewAriv";
+import NewAriv from "./NewAriv";
+import TopSelling from "./TopSelling";
 
 export default function Product() {
   const dispatch = useDispatch();
 
- 
   const getData = async () => {
     try {
       const data = await axios.get("https://fakestoreapi.com/products");
@@ -21,7 +21,8 @@ export default function Product() {
   }, []);
   return (
     <div className="bg-white">
-     <NewAriv/>
+      <NewAriv />
+      <TopSelling />
     </div>
   );
 }

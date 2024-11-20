@@ -3,19 +3,19 @@ const footerNavs = [
           label: "Resources",
           items: [
               {
-                  href: 'javascript:void()',
+                  href: '#',
                   name: 'contact'
               },
               {
-                  href: 'javascript:void()',
+                  href: '#',
                   name: 'Support'
               },
               {
-                  href: 'javascript:void()',
+                  href: '#',
                   name: 'Documentation'
               },
               {
-                  href: 'javascript:void()',
+                  href: '#',
                   name: 'Pricing'
               },
           ],
@@ -24,19 +24,19 @@ const footerNavs = [
           label: "About",
           items: [
               {
-                  href: 'javascript:void()',
+                  href: '#',
                   name: 'Terms'
               },
               {
-                  href: 'javascript:void()',
+                  href: '#',
                   name: 'License'
               },
               {
-                  href: 'javascript:void()',
+                  href: '#',
                   name: 'Privacy'
               },
               {
-                  href: 'javascript:void()',
+                  href: '#',
                   name: 'About US'
               },
           ]
@@ -45,19 +45,19 @@ const footerNavs = [
           label: "Explore",
           items: [
               {
-                  href: 'javascript:void()',
+                  href: '#',
                   name: 'Showcase'
               },
               {
-                  href: 'javascript:void()',
+                  href: '#',
                   name: 'Roadmap'
               },
               {
-                  href: 'javascript:void()',
+                  href: '#',
                   name: 'Languages'
               },
               {
-                  href: 'javascript:void()',
+                  href: '#',
                   name: 'Blog'
               },
           ]
@@ -66,15 +66,15 @@ const footerNavs = [
           label: "Company",
           items: [
               {
-                  href: 'javascript:void()',
+                  href: '#',
                   name: 'Partners'
               },
               {
-                  href: 'javascript:void()',
+                  href: '#',
                   name: 'Team'
               },
               {
-                  href: 'javascript:void()',
+                  href: '#',
                   name: 'Careers'
               },
           ],
@@ -88,16 +88,16 @@ const footerNavs = [
 const Footer = () => {
   return (
     <footer className="pt-10 bg-white">
-    {/* <div className="max-w-screen-xl mx-auto px-4 md:px-8">
+    <div className="max-w-screen-xl mx-auto px-4 md:px-8">
         
         <div className="flex-1 mt-16 space-y-6 justify-between sm:flex md:space-y-0">
             {
                 footerNavs.map((item, idx) => (
                     <ul
-                        className="space-y-4 text-gray-300"
+                        className="space-y-4"
                         key={idx}
                     >
-                        <h4 className="text-gray-200 font-semibold sm:pb-2">
+                        <h4 className=" font-semibold sm:pb-2">
                             {item.label}
                         </h4>
                         {
@@ -118,7 +118,7 @@ const Footer = () => {
             }
         </div>
         
-    </div> */}
+    </div>
     <div className="mt-10 py-10  items-center justify-between sm:flex">
             <p className="p-2 pl-6">© 2025 <span className="footer-logo cursor-pointer"> SHOP.CO</span> Inc. All rights reserved.</p>
            

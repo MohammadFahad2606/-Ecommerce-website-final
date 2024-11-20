@@ -2,7 +2,7 @@ import React from 'react'
 
 const Card = ({product}) => {
   return (
-    <div  className="group relative">
+    <div className="group relative cursor-pointer">
               <img
                 alt={product.title}
                 src={product.image}
@@ -18,7 +18,7 @@ const Card = ({product}) => {
                   </h3>
                   <p className="mt-1 text-sm text-gray-500">{product.color}</p>
                 </div>
-                <p className="text-sm font-medium text-gray-900">
+                <p className="text-lg p-2 font-bold  text-gray-900">
                   {product.price}$
                 </p>
               </div>
