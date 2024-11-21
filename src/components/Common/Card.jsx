@@ -1,8 +1,16 @@
 import React from 'react'
+import { useNavigate } from 'react-router';
 
 const Card = ({product}) => {
+  const navigate = useNavigate();
+
+  const productNav = (id) => {
+    navigate(`item/${id}`) // Replace with your actual navigation logi
+    // item/
+    // console.log(id)
+  };
   return (
-    <div className="group relative cursor-pointer">
+    <div onClick={()=>productNav(product.id)} className="group relative cursor-pointer">
               <img
                 alt={product.title}
                 src={product.image}

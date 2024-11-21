@@ -3,7 +3,7 @@ import Card from "./Common/Card";
 import { useSelector } from "react-redux";
 const TopSelling = () => {
   const data = useSelector((state) => state);
-  console.log(data)
+  // console.log(data)
   const [viewAll, setviewAll] = useState(false);
   return (
     <>
