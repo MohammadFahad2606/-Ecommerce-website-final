@@ -30,7 +30,7 @@ const navigation = {
       featured: [
         {
           name: "New Arrivals",
-          href: "#",
+          href: "/new-arrivals",
           imageSrc:
             "https://tailwindui.com/plus/img/ecommerce-images/mega-menu-category-01.jpg",
           imageAlt:
@@ -38,7 +38,7 @@ const navigation = {
         },
         {
           name: "Basic Tees",
-          href: "#",
+          href: "/",
           imageSrc:
             "https://tailwindui.com/plus/img/ecommerce-images/mega-menu-category-02.jpg",
           imageAlt:
@@ -50,38 +50,38 @@ const navigation = {
           id: "clothing",
           name: "Clothing",
           items: [
-            { name: "Tops", href: "#" },
-            { name: "Dresses", href: "#" },
-            { name: "Pants", href: "#" },
-            { name: "Denim", href: "#" },
-            { name: "Sweaters", href: "#" },
-            { name: "T-Shirts", href: "#" },
-            { name: "Jackets", href: "#" },
-            { name: "Activewear", href: "#" },
-            { name: "Browse All", href: "#" },
+            { name: "Tops", href: "/" },
+            { name: "Dresses", href: "/" },
+            { name: "Pants", href: "/" },
+            { name: "Denim", href: "/" },
+            { name: "Sweaters", href: "/" },
+            { name: "T-Shirts", href: "/" },
+            { name: "Jackets", href: "/" },
+            { name: "Activewear", href: "/" },
+            { name: "Browse All", href: "/" },
           ],
         },
         {
           id: "accessories",
           name: "Accessories",
           items: [
-            { name: "Watches", href: "#" },
-            { name: "Wallets", href: "#" },
-            { name: "Bags", href: "#" },
-            { name: "Sunglasses", href: "#" },
-            { name: "Hats", href: "#" },
-            { name: "Belts", href: "#" },
+            { name: "Watches", href: "/" },
+            { name: "Wallets", href: "/" },
+            { name: "Bags", href: "/" },
+            { name: "Sunglasses", href: "/" },
+            { name: "Hats", href: "/" },
+            { name: "Belts", href: "/" },
           ],
         },
         {
           id: "brands",
           name: "Brands",
           items: [
-            { name: "Full Nelson", href: "#" },
-            { name: "My Way", href: "#" },
-            { name: "Re-Arranged", href: "#" },
-            { name: "Counterfeit", href: "#" },
-            { name: "Significant Other", href: "#" },
+            { name: "Full Nelson", href: "/" },
+            { name: "My Way", href: "/" },
+            { name: "Re-Arranged", href: "/" },
+            { name: "Counterfeit", href: "/" },
+            { name: "Significant Other", href: "/" },
           ],
         },
       ],
@@ -92,7 +92,7 @@ const navigation = {
       featured: [
         {
           name: "New Arrivals",
-          href: "#",
+          href: "/new-arrivals",
           imageSrc:
             "https://tailwindui.com/plus/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg",
           imageAlt:
@@ -100,7 +100,7 @@ const navigation = {
         },
         {
           name: "Artwork Tees",
-          href: "#",
+          href: "/",
           imageSrc:
             "https://tailwindui.com/plus/img/ecommerce-images/category-page-02-image-card-06.jpg",
           imageAlt:
@@ -112,35 +112,35 @@ const navigation = {
           id: "clothing",
           name: "Clothing",
           items: [
-            { name: "Tops", href: "#" },
-            { name: "Pants", href: "#" },
-            { name: "Sweaters", href: "#" },
-            { name: "T-Shirts", href: "#" },
-            { name: "Jackets", href: "#" },
-            { name: "Activewear", href: "#" },
-            { name: "Browse All", href: "#" },
+            { name: "Tops", href: "/" },
+            { name: "Pants", href: "/" },
+            { name: "Sweaters", href: "/" },
+            { name: "T-Shirts", href: "/" },
+            { name: "Jackets", href: "/" },
+            { name: "Activewear", href: "/" },
+            { name: "Browse All", href: "/" },
           ],
         },
         {
           id: "accessories",
           name: "Accessories",
           items: [
-            { name: "Watches", href: "#" },
-            { name: "Wallets", href: "#" },
-            { name: "Bags", href: "#" },
-            { name: "Sunglasses", href: "#" },
-            { name: "Hats", href: "#" },
-            { name: "Belts", href: "#" },
+            { name: "Watches", href: "/" },
+            { name: "Wallets", href: "/" },
+            { name: "Bags", href: "/" },
+            { name: "Sunglasses", href: "/" },
+            { name: "Hats", href: "/" },
+            { name: "Belts", href: "/" },
           ],
         },
         {
           id: "brands",
           name: "Brands",
           items: [
-            { name: "Re-Arranged", href: "#" },
-            { name: "Counterfeit", href: "#" },
-            { name: "Full Nelson", href: "#" },
-            { name: "My Way", href: "#" },
+            { name: "Re-Arranged", href: "/" },
+            { name: "Counterfeit", href: "/" },
+            { name: "Full Nelson", href: "/" },
+            { name: "My Way", href: "/" },
           ],
         },
       ],
@@ -215,8 +215,8 @@ export const Header = () => {
                             src={item.imageSrc}
                             className="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75"
                           />
-                          <a
-                            href={item.href}
+                          <Link
+                            to={item.href}
                             className="mt-6 block font-medium text-gray-900"
                           >
                             <span
@@ -224,7 +224,7 @@ export const Header = () => {
                               className="absolute inset-0 z-10"
                             />
                             {item.name}
-                          </a>
+                          </Link>
                           <p aria-hidden="true" className="mt-1">
                             Shop now
                           </p>
@@ -246,12 +246,12 @@ export const Header = () => {
                         >
                           {section.items.map((item) => (
                             <li key={item.name} className="flow-root">
-                              <a
-                                href={item.href}
+                              <Link
+                                to={item.href}
                                 className="-m-2 block p-2 text-gray-500"
                               >
                                 {item.name}
-                              </a>
+                              </Link>
                             </li>
                           ))}
                         </ul>
@@ -265,12 +265,12 @@ export const Header = () => {
             <div className="space-y-6 border-t border-gray-200 px-4 py-6">
               {navigation.pages.map((page) => (
                 <div key={page.name} className="flow-root">
-                  <a
-                    href={page.href}
+                  <Link
+                    to={page.href}
                     className="-m-2 block p-2 font-medium text-gray-900"
                   >
                     {page.name}
-                  </a>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -338,8 +338,8 @@ export const Header = () => {
                                       src={item.imageSrc}
                                       className="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75"
                                     />
-                                    <a
-                                      href={item.href}
+                                    <Link
+                                      to={item.href}
                                       className="mt-6 block font-medium text-gray-900"
                                     >
                                       <span
@@ -347,7 +347,7 @@ export const Header = () => {
                                         className="absolute inset-0 z-10"
                                       />
                                       {item.name}
-                                    </a>
+                                    </Link>
                                     <p aria-hidden="true" className="mt-1">
                                       Shop now
                                     </p>
@@ -370,12 +370,12 @@ export const Header = () => {
                                     >
                                       {section.items.map((item) => (
                                         <li key={item.name} className="flex">
-                                          <a
-                                            href={item.href}
+                                          <Link
+                                            to={item.href}
                                             className="hover:text-gray-800"
                                           >
                                             {item.name}
-                                          </a>
+                                          </Link>
                                         </li>
                                       ))}
                                     </ul>
@@ -390,13 +390,13 @@ export const Header = () => {
                   ))}
 
                   {navigation.pages.map((page) => (
-                    <a
+                    <Link
                       key={page.name}
-                      href={page.href}
+                      to={page.href}
                       className="flex items-center text-sm font-bold text-black hover:text-gray-800"
                     >
                       {page.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </PopoverGroup>

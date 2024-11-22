@@ -1,13 +1,13 @@
 import React from 'react'
-import { useNavigate } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 
 const Card = ({product}) => {
   const navigate = useNavigate();
+  console.log(useParams())
 
   const productNav = (id) => {
     navigate(`item/${id}`) // Replace with your actual navigation logi
     // item/
-    // console.log(id)
   };
   return (
     <div onClick={()=>productNav(product.id)} className="group relative cursor-pointer">

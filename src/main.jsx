@@ -5,8 +5,8 @@ import { store } from "./Redux/Store/store.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./Pages/Home.jsx";
-import NewAriv from "./components/NewAriv";
 import ItemDetail from "./components/ItemDetail";
+import NewArrivalsPage from "./Pages/NewArrivalsPage";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -14,8 +14,9 @@ const router = createBrowserRouter([
     children: [
       { path: "", element: <Home /> },
       { path: "item/:itemId", element: <ItemDetail /> },
+      { path: "new-arrivals/item/:itemId", element: <ItemDetail /> },
       { path: "brands", element: "brands" },
-      { path: "new-arrivals", element: <NewAriv/> },
+      { path: "new-arrivals", element: <NewArrivalsPage/> },
       { path: "on-sale", element: "on-sale" },
       { path: "men", element: "men" },
       { path: "women", element: "women" },
