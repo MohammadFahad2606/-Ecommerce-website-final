@@ -7,11 +7,11 @@ import TopSelling from "./TopSelling";
 export default function Product() {
   const dispatch = useDispatch();
   const statdata = useSelector((state) => state);
-  // console.log(statdata)
+  // console.log(statdata.allproducts.length)
   const getData = async () => {
-    if(!statdata?.allproducts){
+    if(statdata.allproducts.length == 0){
       
-      console.log(statdata)
+      // console.log(statdata)
       try {
         const data = await axios.get("https://fakestoreapi.com/products");
         dispatch({ type: ProductTypes.allProduct, payload: data?.data });

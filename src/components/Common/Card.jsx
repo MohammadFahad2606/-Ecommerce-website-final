@@ -6,7 +6,7 @@ import { ProductTypes } from "../../Redux/Action/ActionTypes";
 
 const Card = ({ product }) => {
   const staedata = useSelector((state) => state);
-  console.log(staedata)
+  // console.log(staedata)
   const dispatch = useDispatch();
   const navigate = useNavigate();
   // console.log(useParams())
@@ -16,9 +16,9 @@ const Card = ({ product }) => {
     // console.log("ok");
     // item/
   };
-  const addCart = (product)=>{
-     console.log(product);
-     dispatch({ type: ProductTypes.cartData, payload: {nmae : "fahaf"}});
+const addCart = (product)=>{
+    //  console.log(product);
+     dispatch({ type: ProductTypes.cartData, payload:product });
   }
   return (
     <div className="group relative cursor-pointer" >

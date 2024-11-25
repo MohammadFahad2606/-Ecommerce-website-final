@@ -1,6 +1,7 @@
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-import { useState } from 'react'
+import { useSelector } from 'react-redux';
+
 
 const products = [
   {
@@ -28,7 +29,9 @@ const products = [
 ]
 
 export default function ShoppingCarts({setcartOpen,cartopen}) {
-
+  const statdata = useSelector((state) => state);
+  console.log(statdata.cart)
+  console.log(statdata.cart)  
   return (
     <Dialog open={cartopen} onClose={setcartOpen} className="relative z-10">
       <DialogBackdrop
@@ -63,24 +66,24 @@ export default function ShoppingCarts({setcartOpen,cartopen}) {
                   <div className="mt-8">
                     <div className="flow-root">
                       <ul role="list" className="-my-6 divide-y divide-gray-200">
-                        {products.map((product) => (
+                        {statdata?.cart.map((product) => (
                           <li key={product.id} className="flex py-6">
                             <div className="size-24 shrink-0 overflow-hidden rounded-md border border-gray-200">
-                              <img alt={product.imageAlt} src={product.imageSrc} className="size-full object-cover" />
+                              <img alt={product.imageAlt} src={product.image} className="size-full object-cover" />
                             </div>
 
                             <div className="ml-4 flex flex-1 flex-col">
                               <div>
                                 <div className="flex justify-between text-base font-medium text-gray-900">
                                   <h3>
-                                    <a href={product.href}>{product.name}</a>
+                                  {product.title}
                                   </h3>
                                   <p className="ml-4">{product.price}</p>
                                 </div>
-                                <p className="mt-1 text-sm text-gray-500">{product.color}</p>
+                                
                               </div>
                               <div className="flex flex-1 items-end justify-between text-sm">
-                                <p className="text-gray-500">Qty {product.quantity}</p>
+                                <p className="text-gray-500">Qty 1</p>
 
                                 <div className="flex">
                                   <button type="button" className="font-medium  hover:text-gray-500">
@@ -116,7 +119,7 @@ export default function ShoppingCarts({setcartOpen,cartopen}) {
                       <button
                         type="button"
                         onClick={() => setcartOpen(false)}
-                        className="font-medium text-indigo-600 hover:text-indigo-500"
+                        className="font-medium text-gray-600 hover:text-gray-500"
                       >
                         Continue Shopping
                         <span aria-hidden="true"> &rarr;</span>

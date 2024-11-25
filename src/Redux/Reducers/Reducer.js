@@ -1,20 +1,25 @@
 import { ProductTypes } from "../Action/ActionTypes";
 
-const initialState ={
-    allproducts:[],
-    cart:[],
-}
+const initialState = {
+    allproducts: [],
+    cart: [],
+};
 
-export const ProductReducer = (state = initialState,{type,payload})=>{
+export const ProductReducer = (state = initialState, { type, payload }) => {
     switch (type) {
         case ProductTypes.allProduct:
-            return {...state,allproducts:[...state.allproducts,...payload]}
-            break;
+            return {
+                ...state,
+                allproducts: [...state.allproducts, ...payload],
+            };
+
         case ProductTypes.cartData:
-            return {...state,cart:[state.cart,...payload]}
-            break;
-    
+            return {
+                ...state,
+                cart: [...state.cart, payload], // Corrected spreading
+            };
+
         default:
-           state
+            return state; // Always return state in default
     }
-}
+};

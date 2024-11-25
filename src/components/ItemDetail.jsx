@@ -1,6 +1,9 @@
 import { StarIcon } from "@heroicons/react/20/solid";
 import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
+import { ProductTypes } from "../Redux/Action/ActionTypes";
+import { useEffect } from "react";
+import axios from "axios";
 
 
 
@@ -9,20 +12,37 @@ function classNames(...classes) {
 }
 
 export default function ItemDetail() {
-
-
   const staedata = useSelector((state) => state);
-  console.log(staedata)
   const dispatch = useDispatch();
-
-  const addCart = (product)=>{
-     console.log(product);
-     dispatch({ type: ProductTypes.cartData, payload: {nmae : "fahaf"}});
-  }
   const data = useSelector((state) => state);
-  let { itemId } = useParams();
-  const productData = data?.allproducts.find((product) => product.id == (itemId));
-  const {title,category,description,image,price,rating}= productData
+ 
+
+
+ const getData = async () => {
+  if(statdata.allproducts.length == 0){
+    
+    // console.log(statdata)
+    try {
+      const data = await axios.get("https://fakestoreapi.com/products");
+      dispatch({ type: ProductTypes.allProduct, payload: data?.data });
+    } catch (er) {
+      console.log(er);
+    }
+  }
+};
+useEffect(() => {
+  getData();
+}, []);
+
+
+
+let { itemId } = useParams();
+const   productData = data?.allproducts.find((product) => product.id == (itemId));
+const {title,category,description,image,price,rating}= productData
+const addCart = (productData)=>{
+  dispatch({ type: ProductTypes.cartData, payload:productData });
+}
+
   return (
     <div className="bg-white ">
       <div className="pt-6">
@@ -75,14 +95,14 @@ export default function ItemDetail() {
               </div>
             </div>
 
-            <form className="mt-10">
+            <div className="mt-10">
               <button
-                type="submit"
+                 onClick={() => addCart(productData)}
                 className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-black px-8 py-3 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
               >
                 Add to bag
               </button>
-            </form>
+            </div>
           </div>
 
           <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">

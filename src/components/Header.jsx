@@ -21,6 +21,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import ShoppingCarts from "./ShoppingCarts";
+import { useSelector } from "react-redux";
 
 const navigation = {
   categories: [
@@ -154,6 +155,7 @@ const navigation = {
 };
 
 export const Header = () => {
+  const statdata = useSelector((state) => state);
   const [showInput, setShowInput] = useState(false);
   const [cartopen, setcartOpen] = useState(false);
   const handleToggleInput = () => {
@@ -463,6 +465,7 @@ export const Header = () => {
                     className="size-6 shrink-0"
                   />
                 </div>
+                  <span className="bg-gray-200 rounded-full p-1 ">{statdata.cart.length}</span>
               </div>
             </div>
           </div>
