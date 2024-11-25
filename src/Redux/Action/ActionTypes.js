@@ -1,3 +1,4 @@
 export const ProductTypes = {
-    allProduct : "allProduct"
+    allProduct : "allProduct",
+    cartData : "cartData"
 }

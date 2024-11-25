@@ -1,6 +1,6 @@
 import { StarIcon } from "@heroicons/react/20/solid";
 import { useParams } from "react-router";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 
 
@@ -9,6 +9,16 @@ function classNames(...classes) {
 }
 
 export default function ItemDetail() {
+
+
+  const staedata = useSelector((state) => state);
+  console.log(staedata)
+  const dispatch = useDispatch();
+
+  const addCart = (product)=>{
+     console.log(product);
+     dispatch({ type: ProductTypes.cartData, payload: {nmae : "fahaf"}});
+  }
   const data = useSelector((state) => state);
   let { itemId } = useParams();
   const productData = data?.allproducts.find((product) => product.id == (itemId));

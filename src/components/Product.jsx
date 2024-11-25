@@ -7,7 +7,7 @@ import TopSelling from "./TopSelling";
 export default function Product() {
   const dispatch = useDispatch();
   const statdata = useSelector((state) => state);
-  console.log(statdata)
+  // console.log(statdata)
   const getData = async () => {
     if(!statdata?.allproducts){
       
