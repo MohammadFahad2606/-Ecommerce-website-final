@@ -1,12 +1,13 @@
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { Provider } from "react-redux";
-import { store } from "./Redux/Store/store.js";
+import { persistor, store } from "./Redux/Store/store.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./Pages/Home.jsx";
 import ItemDetail from "./components/ItemDetail";
 import NewArrivalsPage from "./Pages/NewArrivalsPage";
+import { PersistGate } from "redux-persist/integration/react";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,8 +25,12 @@ const router = createBrowserRouter([
   },
 ]);
 createRoot(document.getElementById("root")).render(
+  
   <Provider store={store}>
-    {/* <App /> */}
-    <RouterProvider router={router} />
+    <PersistGate loading={null} persistor={persistor}>
+ {/* <App /> */}
+ <RouterProvider router={router} />
+    </PersistGate>
+   
   </Provider>
 );
